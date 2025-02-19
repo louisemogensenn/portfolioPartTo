@@ -1,0 +1,591 @@
+
+/* ---------------- GENEREL STYLING ---------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: 'Helvetica Neue', 'Roboto', Times, serif; /* Valg af font og sekundær font, der sikrer, at skriften stadig er sans serif*/
+    margin: 0; /* Nulstiller al deafult margin */
+    padding: 0; /* Nulstiller al deafult padding */
+}
+
+:root {
+    --primaerFarve: #000; /* Bruges som primær skriftfarve*/
+    --sekundaerFarve: #0F11CF; /* Bruges til mindre elementer*/
+}
+
+body {
+    margin-left: 162px; /* Alt indhold placeres minimum 162px fra venstre kant som udgangspunkt*/
+    margin-right: 162px; /* Alt indhold placeres minimum 162px fra højre kant som udgangspunkt*/
+}
+
+a {
+    text-decoration: none; /* Fjerner underline fra links */
+    color: var(--primaerFarve); /* Alle links bliver sorte i stedet for lilla */
+}
+
+.punktum {
+    color: var(--sekundaerFarve); /* Skifter farven på punktum */
+}
+
+.overskriftPaaSide {
+    display: flex; /* Denne linje placerer overskrift og punktum tæt på hinanden */
+    font-size: 99px;
+}
+
+.bindestreg {
+    border: none; /* Fjerner border */
+    background-color: var(--sekundaerFarve); /* Angiver farven på linjen */
+    height: 2px; /* Angiver bindestregens tykkelse */
+    width: 31px; /* Angiver længden på bindestregen */
+    align-self: center; /* Placerer bindestregen med samme horisontale midterpunkt som teksten */
+}
+
+@media (max-width: 1200px) {
+    body {
+        margin-left: 10px; /* Angiver ny margin for mobil-version*/
+        margin-right: 10px;
+    }
+
+    .overskriftPaaSide {
+        font-size: 39px; /* De øverste overskrifter får en anden skriftstørrelse */
+        margin-bottom: 40px; /* Hver overskrift har 40px ned til nedstående elementer */
+    }
+
+    .bindestreg {
+        width: 12px; /* Ændrer længden på den blå bindestreg*/
+    }
+}
+
+/* ---------------- STYLING AF HEADER ---------------- */
+
+.burgermenu {
+    display: none; /* Burgermenuen skjultet i default */
+}
+
+.menulinje {
+    display: flex; 
+    justify-content: space-between; /* Logo og navigationslinje placeres*/
+    align-items: center; /* Logo og navigationslinje placeres med samme midtpunkt horisontalt */
+    margin-bottom: 19px; /* Skaber en afstand på 19px til linjen under neden */
+    margin-top: 40px; /* Skaber afstanden mellem toppen af browseren og toppen af menulinjen */
+}
+
+.logo {
+    font-size: 40px;
+}
+
+.navigationslinje {
+    display: flex; /* Projekter, Om og Kontakt placeres på linje */
+    font-size: 35px; /* Størrelsen på linksene defineres til 35px */
+    gap: 50px; /* Der er 80 px mellem hvert link */
+}
+
+.navigationslinje a:hover {
+    color: var(--sekundaerFarve); /* Angiver farven ved hover */
+    cursor: pointer;
+}
+
+.horisontal-linje, .horisontal-linje-footer  {
+    color: var(--sekundaerFarve); /* Angiver farven på stregen*/
+    border: 1px solid; /* Tykkelsen på stregen */
+    margin: 0 -92px 50px; /* Body ha stylingen: margin-left: 162px og margin-right: 162px;. Linjen skal være 70px fra hver kant i stedet og derfor er margin-left og margin-right i minus 92, da 162px - 92px=70px */
+}
+
+.listeelement { /* Bruges til at style bindestreg og tekst  */
+    display: flex; /* Placerer bindestreg og tekst på linje */
+    gap: 5px; /* Skaber en afstand mellem bindestreg og tekst */
+}
+
+.listeelement p {
+    font-size: 25px; /* Teksterne får en bestemt skriftstørrelse */
+    gap: 10px; /* Tekststykkerne får en afstand imellem sig*/
+}
+
+/* ---------------- STYLING AF BURGERMENU ---------------- */
+
+.menuIndhold {
+    position: fixed; /* Menuen vises i hele vinduet */
+    top: 0; /* Burgermenuen er placeret i toppen af skærmen */
+    right: 0; /* Burgermenue starter ved kanten af højre side*/
+    width: 100%; /* Burgermenuen fylder 100% af bredden */
+    height: 100%; /* Burgermenuen fylder 100% af højden */
+    background-color: #fff; /* Sikrer, at baggrunden ikke er gennemsigtig */
+    display: none; /* Indholdet vises ikke i default */
+    flex-direction: column; /* Elementeren står oven på hianden*/
+    justify-content: center; /* Det hele er placeret i midten vertikalt */
+    align-items: stretch; /* Indholdet fylder hele containeren */
+    z-index: 1000;
+}
+
+.menuIndhold.aktiv {
+    display: flex; /* Når klassen aktiv tilføjet vises indoldet i menuen*/
+}
+
+#lukBurgermenu {
+    position: absolute; /* Placeres relativt til .menuIndhold */
+    top: 40px; /* Justér efter behov, så det matcher burgermenu-ikonet */
+    right: 75px; /* Samme margen som .burgermenuIndhold */
+    cursor: pointer; 
+    width: 50px; /* Sørg for, at størrelsen matcher burgermenuen */
+}
+
+.navigationsmenu a {
+    /* text-decoration: none; */
+    display: flex;
+    align-items: center; /* Elementerne er på samme linje */
+    justify-content: space-between; /* Links og pile placeres i hver sin side */
+}
+
+.burgermenu {
+    cursor: pointer; /* Ved hover kommer en pointer så det er synligt, at elementet er klikbart*/
+}
+
+.burgermenuIndhold {
+    display: flex; /* Elementerne placeres på række */
+    justify-content: space-between; /* Elementerne fylder hele containren*/
+    align-items: center; /* Elementerne står på samme linje */
+    margin: 0 75px;
+    font-size: 35px;
+}
+
+.burgermenuIndhold img {
+    width: 50px; /* Pileness størrelse */
+}
+
+
+@media (max-width: 1200px) {
+    .burgermenu {
+        display: block;
+    }
+
+    .navigationslinje {
+        display: none;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 390px) {
+
+    .burgermenu {
+        display: block;
+    }
+
+    .horisontal-linje, .horisontal-linje-footer {
+        margin: 0 -10px 30px; /* Ændrer margin for linjerne */
+    }
+
+    .listeelement p {
+        font-size: 15px;
+    }
+
+    #lukBurgermenu { /* Sikrer, at krydset er præcist oven på burgermenuen*/
+        right: -10px; /* Flytter det tættere på kanten */
+        top: 45px; /* Justerer højden lidt */
+    }
+
+}
+
+/* ---------------- STYLING AF FOOTER ---------------- */
+
+.horisontal-linje-footer {
+    margin: 82px -92px 48px; /* Afstanden mellem top- og bundelementer er anderledes for footer-linjen */
+}
+.footer {
+    display: flex; /* Alle elementer placeres på linje */
+    justify-content: space-between; /* Sikrer, at indholdet fylder helt ud til kanterne i begge sider og fordeler pladsen ligeligt imellem sig */
+}
+
+.footerIkonOgTekst {
+    display: flex; /* Placerer elementerne på linje */
+    flex-direction: column; /* Placerer elementerne på linje vertikalt*/
+    align-items: center; /* Placerer ikonet og teksten med samme veertikale midterpunkt */
+    text-align: center; /* Placerer ikonet og teksten med samme veertikale midterpunkt */
+    gap: 10px; /* Skaber en afstand mellem ikoner og tekst vertikalt */
+}
+
+.footerIkonOgTekst img {
+    width: 82px; /* Giver alle ikoner i footer den samme bredde */
+    height: 82px; /* Er nødvenidig, da telefonen har andre dimensioner */
+}
+
+@media (max-width: 1000px) {
+    .footer {
+        flex-direction: column; /* Står i kolonne i stedet for på linje/række*/
+    }
+
+    .footer img {
+        width: 41px; /* Størrelsen på ikonerne ændres */
+        max-height: 41px;
+        margin-top: 10px; /* Der skabes afstand mellem ikoner og tekst */
+    }
+}
+
+@media (max-width: 390px) {
+
+    .footerIkonOgTekst {
+        flex-direction: row; /* Elementerne placeres på horisontal linje */
+    }
+
+    .horisontal-linje-footer {
+        margin: 30px -10px 20px; /* Ændrer margin for linjerne */
+    }
+}
+
+/* ---------------- STYLING AF INDEX ---------------- */
+
+#forsideIndhold {
+    display: flex; /* Placerer billedet og tekst+pile på en horisontal linje */
+    justify-content: space-between; /* Skaber afstand imellem indhold, så det placeres i hver sin side */
+    align-items: flex-end; /* Placerer al indhold (her med fokus på teksten) på den nederste linje i flexboksen */
+}
+
+#forsidebillede {
+    width: 500px;
+}
+
+#forsideNavigation {
+    display: flex; /* Placerer elementerne på linje*/
+    flex-direction: column; /* Links og pile placeres oven på hinanden */
+    gap: 15px; /* Skaber en afstand mellem top og bund for hvert link */
+    font-size: 80px; /* Angiver størrelsen på fonten */
+}
+
+.forsidelinkOgPil {
+    display: flex; /* Placerer elementerne på linje*/
+    justify-content: space-between; /* Sikrer at pil og tekst står i hver sin ende, så teksterne starter samme sted og pilene slutter samme sted */
+    gap: 30px; /* Skaber afstand mellem pil og tekst på forsiden */
+}
+
+@media (max-width: 1100px) {
+    #forsideIndhold {
+        flex-direction: column; /* Indhold placeres i kolonne i stedet for række */
+        align-items: center; /* Indholdet placeret i midten af siden */
+    }
+
+    #forsidebillede {
+        align-items: center;
+    }
+}
+
+@media (max-width: 640px) {
+    #forsidebillede {
+        width: 370px; /* skærmensbredde - margin = bredden -> 390 - (10*2) = 370px*/
+    }
+
+    .forsidelinkOgPil {
+        justify-content: space-between;
+    }
+
+    #forsideNavigation {
+        font-size: 40px;
+        width: 370px;
+    }
+
+    .forsidelinkOgPil img {
+        width: 40px;
+    }
+}
+
+/* ---------------- STYLING AF PROJEKTER ---------------- */
+#topProjekt {
+    margin-top: 100px; /* Det øverste projekt placeres 50px fra overskriften */
+}
+
+.indholdProjekter {
+    display: flex; /* Billedet samt tekststykker placeres på linje */
+}
+
+.indholdProjekter img {
+    width: 535px; /* Billedet til hvert projekt får en bestemt størrelse */
+    height: 314px; /* Giver billederne af de tre projekter en bestemt højde */
+}
+
+.linjeMellemProjekter {
+    border: 0.5px solid; /* Tykkelsen på stregen */
+    margin: 62px 0; /* Giver linjen en margin (pladsen omkring sig) på 62px */
+}
+
+.tekstProjekter {
+    margin-left: 118px; /* Tekststykkerne placeres 118px fra deres tilhørende billede */
+}
+
+.tekstProjekter h3 {
+    font-size: 35px; /* Overskrifterne for hvert projekt får en skriftstørrelse */
+}
+
+.tekstProjekter p {
+    font-size: 25px; /* Underoverskrifterne får en skriftstørrelse */
+}
+
+.pilProjekter {
+    width: 54px; /* Angiver pilens bredde */
+    float: right; /* Pilen placeres i højre side af skærmen */
+    margin-top: -27px; /* Placerer pilen på samme grundlinje som billedet */
+}
+
+@media (max-width: 1396px) {
+
+    .indholdProjekter h3 {
+        font-size: 25px;
+    }
+
+}
+
+@media (max-width: 700px) {
+    #topProjekt {
+        margin: 0; /* Nulstiller margin på det øverste projekt*/
+    }
+
+    .indholdProjekter {
+        flex-direction: column;
+    }
+
+    .indholdProjekter img {
+        width: 370px;
+        height: 245px;
+    }
+
+    .linjeMellemProjekter {
+        border: 0.5px solid; /* Tykkelsen på stregen */
+        margin: 20px 0; /* Giver linjen en margin (pladsen omkring sig) på 62px */
+    }
+    
+    .tekstProjekter {
+        margin: 0;
+    }
+
+    .tekstProjekter h3 {
+        font-size: 20px; /* Overskrifterne for hvert projekt får en skriftstørrelse */
+    }
+    
+    .tekstProjekter p {
+        font-size: 15px; /* Underoverskrifterne får en skriftstørrelse */
+    }
+}
+
+/* ---------------- STYLING AF PROJEKT ---------------- */
+
+#projektAarhusJazzFestival, #projektSteno, #projektNippon {
+    cursor: pointer; /* Alt indholdet i projektet er et link - dette tydliggøres ved at have en pointer-cursor ved hover */
+}
+
+.projektbilleder {
+    display: flex; /* Placerer billederne på række */
+    justify-content: space-around; /* Skaber ens afstand på begge sider af billederne*/
+    margin-top: 35px; /* Skaber afstand til ovenstående elementer */
+    margin-bottom: 90px; /* Skaber afstand til nedstående elementer */
+}
+
+.projektbilleder img {
+    width: 600px; /* Billederne fpr en bestemt bredde */
+}
+
+#ipadBillederSteno {
+    width: 300px; /* Billeder får en bestemt bredde */
+    gap: 120px; /* Der skabes en afstand mellem billeder af ipads på siden steno.html */
+}
+
+.overskriftOgTekstProjekt h3 {
+    font-size: 35px; /* Giver en bestemt skriftstørrelse til underoverskrifter */
+}
+
+.overskriftOgTekstProjekt p {
+    font-size: 25px; /* Giver en bestemt skriftstørrelse til brødttekst */
+}
+
+.projektbillederIphone {
+    display: flex; /* Billederne stilles på linje */
+    justify-content: space-around; /* De fordeles med lige meget plads omkring sig */
+    margin-top: 82px; /* Billederne får en bestemt afstand til ovenstående elementer */
+    margin-bottom: 110px; /* Billederne får en bestemt afstand til nedstående elementer */
+}
+
+.projektRoller {
+    margin-top: 110px; /* Teksten får en bestemt afstand til ovenstående elementer */
+    font-size: 35px; /* Teksten får en bestemt skriftstørrelse */
+}
+
+.linkTilEkstern {
+    color: var(--sekundaerFarve); /* Links til eksterne sider får den blå farve */
+}
+
+#billedegalleriSteno img{
+    height: 500px; /* Billederne får en bestemt størrelse*/
+    width: 388px;
+}
+
+@media (max-width: 1500px) {
+    .projektbilleder {
+        flex-direction: column; /* Placerer billederne over hinanden */
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .projektbillederIphone {
+        height: 600px;
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .projektbillederIphone {
+        height: 338px;
+    }
+
+}
+
+@media (max-width: 390px) {
+    .projektbilleder {
+        flex-direction: column; /* Placerer billederne over hinanden */
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    .projektbilleder img{
+        width: 370px; /* Billederne får samme bredde som skærmen minus margin*/
+    }
+
+    #ipadBillederSteno {
+        width: 370px; /* Angiver bredden på billedet */
+    }
+
+    .overskriftOgTekstProjekt h3 {
+        font-size: 20px; /* Giver en anden skriftstørrelse */
+        margin-top: 20px; /* Skaber afstand til ovenstående elementer*/
+    }
+
+    .overskriftOgTekstProjekt p {
+        font-size: 15px;
+    }
+
+    .projektbillederIphone {
+        height: 338px;
+    }
+
+    #billedegalleriSteno img{
+        margin-top: 10px;
+    }
+
+}
+/* ---------------- STYLING AF OM ---------------- */
+
+.broedTekstOm{
+    font-size: 25px; /* Brødteksten får en bestemt skriftstørrelse */
+}
+
+#billedegalleriOm img {
+    width: 384px; /* Bredden sætter på følgende udregning: width = 1512 (skærmens bredde) - (162*2) (margin i begge sider) - (18*2) (ønsket afstand mellem billeder) / 3 (antal billeder)*/
+}
+
+.billederPaaLinje {
+    display: flex; /* Billederne placeres på linje */
+    justify-content: space-between; /* Billederne får lige meget plads omkring sig */
+    margin: 18px 0; /* Billederne får en afstand på 18px til top og bund*/
+}
+
+#omMig {
+    margin-bottom: 61px; /* De syv gode ting om mig får en afstand til nedstående elementer */
+}
+
+#omMig h3 {
+    font-size: 35px; /* De syv gode ting får en bestemt skriftstørrelse */
+}
+
+.beskrivelseOgBillede {
+    display: flex; /* Ti ting om mig og billedet i bunden står på række */
+    justify-content: space-between; /* De placeres yderst i deres container*/
+    align-items: end; /* De placeres nederst i deres container*/
+}
+
+.figur {
+    width: 300px; /* Figuren får en bredde på 300px */
+}
+
+@media (max-width: 1076px) {
+    #billedegalleriOm img {
+        width: 280px; /* Bredden på billederne passer til skærmstørrelsen - 20px */
+        margin: 5px 0; /* Skaber en afstand mellem billederne på 10px*/
+    }
+}
+
+@media (max-width: 766px) {
+    #billedegalleriOm img {
+        width: 200px;
+    }
+}
+
+@media (max-width: 527px) {
+
+    .broedTekstOm {
+        font-size: 15px; /* Brødteksten på siden om får en mindre skriftstørrelse */
+    }
+
+    #billedegalleriOm img {
+        width: 370px; /* Bredden på billederne passer til skærmstørrelsen - 20px */
+        margin: 5px 0; /* Skaber en afstand mellem billederne på 10px*/
+    }
+
+    .billederPaaLinje {
+        flex-direction: column; /* Indholdet stilles på vertikal linje */
+        margin: 0; /* Al margin hertil nulstilles */
+    }
+
+    #omMig h3 {
+        font-size: 20px; /* Underoverskrifterne på siden om.html får ny skriftstørrelse */
+    }
+
+    .figur {
+        width: 100px; /* Figuren får en ny størrelse */
+    }
+}
+
+/* ---------------- STYLING AF KONTAKT ---------------- */
+.ikonOgTekst {
+    display: flex; /* Placerer ikon og tekst på linje */
+    align-items: center; /* Sikrer at ikonet og teksten har samme horisontale midterpunkt */
+    gap: 40px; /* Placerer ikon og tekst med 40px imellem sig */
+}
+
+.ikonOgTekst img {
+    margin-bottom: 49px; /* Ikonerne på siden får en afstand til bunden */
+}
+
+.ikonOgTekst p, #kontaktIndhold p {
+    font-size: 25px; /* Tekst får en bestemt skriftstørrelse */
+    margin-bottom: 49px; /* Tekststykkerne får en afstand til nedstående elementer */
+}
+
+#kontaktIndhold {
+    display: flex; /* Indholdet placeres på linje */
+    justify-content: space-between; /* Det får lige meget plads omkring sig */
+}
+
+#kontaktbillede {
+    width: 430px; /* Billedet får en bestemt bredde */
+    align-self: flex-start; /* Holder billedet i toppen */
+}
+
+@media (max-width: 390px) {
+    .ikonOgTekst {
+        display: none; /* Ikoner og tekst er ikke vist, da dette er at finde i footer */
+    }
+
+    #kontaktIndhold p {
+        font-size: 15px; /* Fontstørrelsen */
+    }
+
+    #kontaktIndhold {
+        flex-direction: column; /* Indholdet står på en vertikal linje i stedet for horisontal */
+    }
+
+    #kontaktbillede {
+        width: 370px; /* Billedet passer til skærmenstørrelsen - 20px*/
+    }
+}
