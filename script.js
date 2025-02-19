@@ -33,16 +33,16 @@ lukBurgermenu.addEventListener('click', () => { // Når brugeren klikker på kry
 
 // Script for loadinganimation
 
-const loadingAnimation = document.getElementById('loading-animation');
+const loadingAnimation = document.getElementById('loading-animation'); // Henter animationen i HTML
+
+const links = document.querySelectorAll('a'); // Gemmer alle anchortags
         
-document.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', function(event) {
-        // Vis loading animation
-        loadingAnimation.style.display = 'flex';
-    });
+links.forEach(link => { // For hver link repræsenteret ved link...
+    link.addEventListener('click', () => { // Tilføjes der en eventlisteninger, der lytter på et klik. Når der klikkes...
+        loadingAnimation.style.display = 'flex'; // Vises animationen
+    }) 
 });
-        
-// For at sikre at loading forsvinder hvis noget går galt
-window.addEventListener('load', function() {
-    loadingAnimation.style.display = 'none';
+
+window.addEventListener('load', () => { // Der tilføjer en eventlistener på vinduet, der lytter på, om siden er loaded
+    loadingAnimation.style.display = 'none'; // Når siden er loaded skjules animationen
 });
