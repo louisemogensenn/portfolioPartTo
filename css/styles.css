@@ -377,8 +377,9 @@ a {
 }
 
 #ipadBillederSteno {
-    width: 300px; /* Billeder får en bestemt bredde */
-    gap: 120px; /* Der skabes en afstand mellem billeder af ipads på siden steno.html */
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
 }
 
 .overskriftOgTekstProjekt h3 {
@@ -403,11 +404,6 @@ a {
 
 .linkTilEkstern {
     color: var(--sekundaerFarve); /* Links til eksterne sider får den blå farve */
-}
-
-#billedegalleriSteno img{
-    height: 500px; /* Billederne får en bestemt størrelse*/
-    width: 388px;
 }
 
 @media (max-width: 1500px) {
@@ -461,10 +457,6 @@ a {
         height: 338px;
     }
 
-    #billedegalleriSteno img{
-        margin-top: 10px;
-    }
-
 }
 /* ---------------- STYLING AF OM ---------------- */
 
@@ -472,7 +464,7 @@ a {
     font-size: 25px; /* Brødteksten får en bestemt skriftstørrelse */
 }
 
-#billedegalleriOm img {
+#billedegalleriOm img, #billedegalleriSteno img {
     width: 384px; /* Bredden sætter på følgende udregning: width = 1512 (skærmens bredde) - (162*2) (margin i begge sider) - (18*2) (ønsket afstand mellem billeder) / 3 (antal billeder)*/
 }
 
@@ -501,14 +493,14 @@ a {
 }
 
 @media (max-width: 1076px) {
-    #billedegalleriOm img {
+    #billedegalleriOm img, #billedegalleriSteno img {
         width: 280px; /* Bredden på billederne passer til skærmstørrelsen - 20px */
         margin: 5px 0; /* Skaber en afstand mellem billederne på 10px*/
     }
 }
 
 @media (max-width: 766px) {
-    #billedegalleriOm img {
+    #billedegalleriOm img, #billedegalleriSteno img {
         width: 200px;
     }
 }
@@ -519,14 +511,13 @@ a {
         font-size: 15px; /* Brødteksten på siden om får en mindre skriftstørrelse */
     }
 
-    #billedegalleriOm img {
-        width: 370px; /* Bredden på billederne passer til skærmstørrelsen - 20px */
+    #billedegalleriOm img, #billedegalleriSteno img {
+        width: 110px; /* Bredden på billederne passer til skærmstørrelsen - 20px */
         margin: 5px 0; /* Skaber en afstand mellem billederne på 10px*/
     }
 
     .billederPaaLinje {
-        flex-direction: column; /* Indholdet stilles på vertikal linje */
-        margin: 0; /* Al margin hertil nulstilles */
+        margin: 5px; /* Al margin hertil nulstilles */
     }
 
     #omMig h3 {
