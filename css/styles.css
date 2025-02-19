@@ -102,6 +102,19 @@ a {
     gap: 10px; /* Tekststykkerne får en afstand imellem sig*/
 }
 
+#loading-animation {
+    display: none; /* Loadingikon vises ikke i default */
+    position: fixed; /* Sikrer dens placering */
+    top: 0; /* Sikrer dens placering */
+    left: 0; /* Sikrer dens placering */
+    width: 100%; /* Sikrer at den har den fulde bredde */
+    height: 100%; /* Sikrer at den har den fulde højde */
+    background-color: rgba(255, 255, 255, 0.8); /* Giver animationen en baggrundsfarve */
+    z-index: 9999; /* Sikrer at det er det øverste/forreste element*/
+    justify-content: center; /* Placerer animationen i midten */
+    align-items: center; /* Placerer animationen i midten */
+}
+
 /* ---------------- STYLING AF BURGERMENU ---------------- */
 
 .menuIndhold {
@@ -324,7 +337,6 @@ a {
     .indholdProjekter h3 {
         font-size: 25px;
     }
-
 }
 
 @media (max-width: 700px) {

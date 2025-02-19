@@ -30,3 +30,19 @@ burgermenu.addEventListener('click', () => { // Når brugeren klikker på burger
 lukBurgermenu.addEventListener('click', () => { // Når brugeren klikker på krydset
     navigationsmenu.classList.remove("aktiv"); // Skjules navigationsmenuen
 })
+
+// Script for loadinganimation
+
+const loadingAnimation = document.getElementById('loading-animation');
+        
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(event) {
+        // Vis loading animation
+        loadingAnimation.style.display = 'flex';
+    });
+});
+        
+// For at sikre at loading forsvinder hvis noget går galt
+window.addEventListener('load', function() {
+    loadingAnimation.style.display = 'none';
+});
