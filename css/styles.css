@@ -564,6 +564,12 @@ a {
     align-self: flex-start; /* Holder billedet i toppen */
 }
 
+@media (max-width: 700px) {
+    #kontaktIndhold {
+        flex-direction: column; /* Indholdet står på en vertikal linje i stedet for horisontal */
+    }
+}
+
 @media (max-width: 390px) {
     .ikonOgTekst {
         display: none; /* Ikoner og tekst er ikke vist, da dette er at finde i footer */
