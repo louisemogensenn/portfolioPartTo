@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Linkter til den samlede CSS -->
+    <link rel="icon" href="images/ikon.webp" type="image/x-icon"/> <!-- Lille ikon i tab -->
+    <script src="script.js" defer></script> <!-- Defer bruges til at sikre, at HTML-dokumentet er loaded inden JavaScript køres-->
+    <style>
+        .galleri-beholder {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .galleri-billede {
+            width: 100%;
+            display: none;
+            border: 8px solid #8B6E3C;
+        }
+        
+        .aktiv {
+            display: block;
+        }
+        
+        .billede-ramme {
+            padding: 15px;
+            background-color: #f5f5f5;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="galleri-beholder">
+        <div class="billede-ramme">
+            <img class="galleri-billede aktiv" src="images/amsterdamEt.webp" alt="Billede 1">
+            <img class="galleri-billede" src="images/amsterdamTo.webp" alt="Billede 2">
+            <img class="galleri-billede" src="images/amsterdamTre.webp" alt="Billede 3">
+            <img class="galleri-billede" src="images/amsterdamFire.webp" alt="Billede 4">
+            <img class="galleri-billede" src="images/amsterdamFem.webp" alt="Billede 5">
+            <img class="galleri-billede" src="images/amsterdamSeks.webp" alt="Billede 6">
+        </div>
+    </div>
+
+    <script>
+        // Funktion til at skifte billeder automatisk
+        function skiftBillede() {
+            const billeder = document.querySelectorAll('.galleri-billede');
+            
+            // Find det aktive billede
+            let aktivIndex = 0;
+            for (let i = 0; i < billeder.length; i++) {
+                if (billeder[i].classList.contains('aktiv')) {
+                    aktivIndex = i;
+                    break;
+                }
+            }
+            
+            // Fjern aktiv klasse fra nuværende billede
+            billeder[aktivIndex].classList.remove('aktiv');
+            
+            // Beregn næste billede-index
+            let nextIndex = (aktivIndex + 1) % billeder.length;
+            
+            // Tilføj aktiv klasse til næste billede
+            billeder[nextIndex].classList.add('aktiv');
+        }
+        
+        // Start automatisk billedskift hvert andet sekund
+        setInterval(skiftBillede, 2000);
+    </script>
+</body>
+</html>
