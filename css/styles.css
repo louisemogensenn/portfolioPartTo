@@ -122,19 +122,12 @@ a {
     display: flex; /* Når klassen aktiv tilføjet vises indoldet i menuen*/
 }
 
-#lukBurgermenu {
+.lukBurgermenu {
     position: absolute; /* Placeres relativt til .menuIndhold */
     top: 40px; /* Justér efter behov, så det matcher burgermenu-ikonet */
     right: 75px; /* Samme margen som .burgermenuIndhold */
     cursor: pointer; 
     width: 50px; /* Sørg for, at størrelsen matcher burgermenuen */
-}
-
-.navigationsmenu a {
-    /* text-decoration: none; */
-    display: flex;
-    align-items: center; /* Elementerne er på samme linje */
-    justify-content: space-between; /* Links og pile placeres i hver sin side */
 }
 
 .burgermenu {
@@ -152,7 +145,6 @@ a {
 .burgermenuIndhold img {
     width: 50px; /* Pileness størrelse */
 }
-
 
 @media (max-width: 1200px) {
     .burgermenu {
@@ -182,7 +174,7 @@ a {
         font-size: 15px;
     }
 
-    #lukBurgermenu { /* Sikrer, at krydset er præcist oven på burgermenuen*/
+    .lukBurgermenu { /* Sikrer, at krydset er præcist oven på burgermenuen*/
         right: -10px; /* Flytter det tættere på kanten */
         top: 45px; /* Justerer højden lidt */
     }
