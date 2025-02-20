@@ -119,8 +119,7 @@ a {
     display: flex; /* Elementerne står på linje */
     align-items: center; /* Indholdet placeres med samme horisontale midterpunkt */
     gap: 13px; /* Der er 13px mellem hvert element*/
-    margin-top: -10px; /* Det rykkes 10px tættere på linje over */
-    margin-left: 40px; /* Længden på pilen under */
+    margin: -40px 0 30px 40px;
 }
 
 .trace-side {
