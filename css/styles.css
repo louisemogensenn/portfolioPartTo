@@ -128,7 +128,8 @@ a {
 
 @media (max-width: 1200px) {
     .trace {
-        margin-top: 0;
+        margin: 0;
+        margin-bottom: 10px;
     }
 }
 
