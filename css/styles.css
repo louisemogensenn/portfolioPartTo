@@ -126,6 +126,12 @@ a {
     font-weight: bold; /* Den side brugeren befinder sig på står med fed */
 }
 
+@media (max-width: 1200px) {
+    .trace {
+        margin-top: 0;
+    }
+}
+
 /* ---------------- STYLING AF BURGERMENU ---------------- */
 
 .menuIndhold {
