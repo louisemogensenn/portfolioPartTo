@@ -115,6 +115,18 @@ a {
     align-items: center; /* Placerer animationen i midten */
 }
 
+.trace {
+    display: flex; /* Elementerne står på linje */
+    align-items: center; /* Indholdet placeres med samme horisontale midterpunkt */
+    gap: 13px; /* Der er 13px mellem hvert element*/
+    margin-top: -10px; /* Det rykkes 10px tættere på linje over */
+    margin-left: 40px; /* Længden på pilen under */
+}
+
+.trace-side {
+    font-weight: bold; /* Den side brugeren befinder sig på står med fed */
+}
+
 /* ---------------- STYLING AF BURGERMENU ---------------- */
 
 .menuIndhold {
