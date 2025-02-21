@@ -39,7 +39,11 @@ const links = document.querySelectorAll('a'); // Gemmer alle anchortags
         
 links.forEach(link => { // For hver link repræsenteret ved link...
     link.addEventListener('click', () => { // Tilføjes der en eventlisteninger, der lytter på et klik. Når der klikkes...
-        loadingAnimation.style.display = 'flex'; // Vises animationen
+        if(link.target === '_blank') { // Hvis linket fører til et nyt vindue... - dog griber denne if-sætning IKKE tilfælde, hvor Cmd eller Ctrl holdes nede ved klik og linket åbnes i ny fane
+            // ...sker der ikke noget (så loadinganimationen ikke snurrer rundt, når man har trykker på linkedin-ikonet)
+        } else {
+            loadingAnimation.style.display = 'flex'; // Vises animationen
+        }
     }) 
 });
 
